@@ -28,6 +28,9 @@ h6 {
   padding: 5pt 0pt;
   color: #112d4e;
 }
+h7 {
+  font-size: 8pt;
+}
 button {
   color: #f9f7f7;
   background-color: #3f72af;
