@@ -24,13 +24,22 @@ h4 {
   color: #112d4e;
   font-weight: 300;
 }
-#todayTime {
-  font-size: 17pt;
-  color: #112d4e;
-}
 h6 {
   padding: 5pt 0pt;
   color: #112d4e;
+}
+button {
+  color: #f9f7f7;
+  background-color: #3f72af;
+  border-color: #3f72af;
+  padding: 10px 15px;
+  border: 2pt;
+}
+button:hover {
+  background-color: #dbe2ef;
+  border-color: #6b63ff;
+  color: #112d4e;
+  transition: all 200ms ease-in-out;
 }
 .card {
   padding: 10px 10px;
@@ -57,19 +66,15 @@ h6 {
 .form-control {
   margin: 10px 0;
 }
-button {
-  color: #f9f7f7;
-  background-color: #3f72af;
-  border-color: #3f72af;
-  padding: 10px 15px;
-  border-radius: 4px;
-  border: 2pt;
+.submit {
+  border-radius: 10px;
 }
-button:hover {
-  background-color: #dbe2ef;
-  border-color: #6b63ff;
+.currentLocation {
+  border-radius: 10px;
+}
+#todayTime {
+  font-size: 17pt;
   color: #112d4e;
-  transition: all 200ms ease-in-out;
 }
 .weekDay {
   color: #212629;
