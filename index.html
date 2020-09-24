@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="src/index.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row" class="left">
+        <div class="col-8 my-auto" class="today">
+          <h1>Toronto</h1>
+          <img src="images/undraw_weather_app_i5sm.svg" alt="weatherImage" />
+          <h2 id="todayDate">Thursday, September 10</h2>
+          <h2 id="todayTime">8:00pm</h2>
+          <h3 id="tempOptions">20&degC/18&degC Clouds</h3>
+          <h4>Humidity: 20% Wind: 4km/h</h4>
+          <form>
+            <div class="md-form">
+              <input
+                type="text"
+                placeholder="Insert City"
+                class="form-control"
+                id="searchCity"
+              />
+              <button class="submit">Submit</button>
+              <button class="currentLocation">Current Location</button>
+            </div>
+          </form>
+          <h6><a id="Clink">&degC</a> | <a id="Flink">&degF</a></h6>
+        </div>
+        <div class="col-4 my-auto">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🌨 Fri</h5>
+              <p class="card-text">0&degC/-5&degC</p>
+            </div>
+          </div>
+          <div class="card" class="cardCustom">
+            <div class="card-body">
+              <h5 class="card-title">⛈ Sat</h5>
+              <p class="card-text">10&degC/8&degC</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">☀️ Sun</h5>
+              <p class="card-text">23&degC/18&degC</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🔥 Mon</h5>
+              <p class="card-text">100&degC/0&degC</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🌥 Tues</h5>
+              <p class="card-text">8&degC/6&degC</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

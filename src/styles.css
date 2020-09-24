@@ -1,0 +1,79 @@
+/* Colour pallette: f9f7f7; dbe2ef; 3f72af; 112d4e */
+img {
+  max-width: 60%;
+  margin: 0 0 20pt 0;
+}
+p {
+  font-size: 10pt;
+  color: #112d4e;
+}
+h1 {
+  color: #112d4e;
+}
+h2 {
+  font-size: 20pt;
+  color: #112d4e;
+}
+h3 {
+  font-size: 20pt;
+  color: #112d4e;
+  font-weight: 300;
+}
+h4 {
+  font-size: 14pt;
+  color: #112d4e;
+  font-weight: 300;
+}
+#todayTime {
+  font-size: 17pt;
+  color: #112d4e;
+}
+h6 {
+  padding: 5pt 0pt;
+  color: #112d4e;
+}
+.card {
+  padding: 10px 10px;
+  margin: 5px 5px;
+  width: 80%;
+  background-color: #dbe2ef;
+  border-radius: 15pt;
+}
+.cardCustom {
+  background-color: #f9f7f7;
+}
+.row {
+  width: 600px;
+  border: 1px solid #e8e7ff;
+  border-radius: 4pt;
+  padding: 10px 10px;
+  margin: 20px 0;
+  background-color: #f9f7f7;
+  box-shadow: 5px 5px 5px rgb(0, 0, 0, 10%);
+}
+.today {
+  padding-left: 10px;
+}
+.form-control {
+  margin: 10px 0;
+}
+button {
+  color: #f9f7f7;
+  background-color: #3f72af;
+  border-color: #3f72af;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: 2pt;
+}
+button:hover {
+  background-color: #dbe2ef;
+  border-color: #6b63ff;
+  color: #112d4e;
+  transition: all 200ms ease-in-out;
+}
+.weekDay {
+  color: #212629;
+  background-color: rgb(232, 231, 255);
+  border: none;
+  padding: 3px;
+}
