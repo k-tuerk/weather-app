@@ -28,8 +28,7 @@ let month = months[now.getMonth()];
 let date = now.getDate();
 let hour = now.getHours();
 let minute = now.getMinutes();
-let todayDate = document.querySelector(`h2#todayDate`);
-let todayTime = document.querySelector(`h2#todayTime`);
+let todayDate = document.querySelector(`h4#todayDate`);
 let AMPM = `AM`;
 if (hour > 12) {
   AMPM = `PM`;
@@ -39,8 +38,7 @@ if (hour > 12) {
 if (minute < 10) {
   minute = `0${minute}`;
 }
-todayDate.innerHTML = `${day}, ${month} ${date}`;
-todayTime.innerHTML = `${hour}:${minute} ${AMPM}`;
+todayDate.innerHTML = `${day}, ${month} ${date} ${hour}:${minute} ${AMPM}`;
 
 // Changing City
 function searchCity(event) {
@@ -63,7 +61,9 @@ function showWeather(response) {
   let cityDisplay = document.querySelector("h1");
   cityDisplay.innerHTML = city;
   let celciusChange = document.querySelector("h3#tempOptions");
-  celciusChange.innerHTML = `${maxTemp}&degC/${minTemp}&degC ${description}`;
+  celciusChange.innerHTML = `${maxTemp}&degC/${minTemp}&degC`;
+  let weatherDescription = document.querySelector("h2#weatherDefintion");
+  weatherDescription = `${description}`;
   let otherWeather = document.querySelector("h4");
   otherWeather.innerHTML = `Humidity: ${humidity}% Wind:${wind}km/h`;
 }
