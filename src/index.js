@@ -66,7 +66,7 @@ function showWeather(response) {
   let weatherDescription = document.querySelector("h2#weatherDefintion");
   weatherDescription = `${description}`;
   let otherWeather = document.querySelector("h4#otherWeather");
-  otherWeather.innerHTML = `Humidity: ${humidity}% Wind:${wind}km/h`;
+  otherWeather.innerHTML = `Humidity: ${humidity}% | Wind: ${wind}km/h`;
 }
 
 // Change metric
