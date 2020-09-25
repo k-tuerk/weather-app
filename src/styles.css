@@ -55,7 +55,7 @@ button:hover {
 .row {
   width: 600px;
   border: 1px solid #e8e7ff;
-  border-radius: 4pt;
+  border-radius: 10pt;
   padding: 10px 10px;
   margin: 20px 0;
   background-color: #f9f7f7;
