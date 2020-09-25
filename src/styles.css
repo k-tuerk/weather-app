@@ -51,6 +51,7 @@ button:hover {
   border-radius: 15pt;
   color: #112d4e;
   background-color: #dbe2ef;
+  box-shadow: 2px 2px 2px rgb(0, 0, 0, 5%);
 }
 .row {
   width: 600px;
