@@ -11,8 +11,12 @@ h1 {
   color: #112d4e;
 }
 h2 {
-  font-size: 20pt;
   color: #112d4e;
+  font-size: 14pt;
+}
+.todayDate {
+  color: #112d4e;
+  font-size: 12pt;
 }
 h3 {
   font-size: 20pt;
@@ -72,10 +76,6 @@ button:hover {
 }
 .currentLocation {
   border-radius: 10px;
-}
-#todayTime {
-  font-size: 17pt;
-  color: #112d4e;
 }
 .weekDay {
   color: #212629;
