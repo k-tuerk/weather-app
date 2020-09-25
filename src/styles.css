@@ -48,11 +48,9 @@ button:hover {
   padding: 10px 10px;
   margin: 5px 5px;
   width: 80%;
-  background-color: #dbe2ef;
   border-radius: 15pt;
-}
-.cardCustom {
-  background-color: #f9f7f7;
+  color: #112d4e;
+  background-color: #dbe2ef;
 }
 .row {
   width: 600px;
