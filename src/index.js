@@ -55,17 +55,19 @@ function showWeather(response) {
   let city = response.data.name;
   let maxTemp = Math.round(response.data.main.temp_max);
   let minTemp = Math.round(response.data.main.temp_min);
+  let temp = Math.round(response.data.main.temp);
   let description = response.data.weather[0].main;
   let humidity = response.data.main.humidity;
   let wind = response.data.wind.speed;
-  console.log(wind);
   let cityDisplay = document.querySelector("h1");
   cityDisplay.innerHTML = city;
-  let celciusChange = document.querySelector("h3#tempOptions");
+  let currentTemp = document.querySelector("h2#currentTemperature");
+  currentTemp = `${temp}&degC`;
+  let celciusChange = document.querySelector("h3#tempHighLow");
   celciusChange.innerHTML = `${maxTemp}&degC/${minTemp}&degC`;
-  let weatherDescription = document.querySelector("h2#weatherDefintion");
+  let weatherDescription = document.querySelector("h4#weatherDefintion");
   weatherDescription = `${description}`;
-  let otherWeather = document.querySelector("h4#otherWeather");
+  let otherWeather = document.querySelector("h3#otherWeather");
   otherWeather.innerHTML = `Humidity: ${humidity}% | Wind: ${wind}km/h`;
 }
 
