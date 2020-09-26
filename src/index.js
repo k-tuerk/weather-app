@@ -67,8 +67,10 @@ function showWeather(response) {
   celciusChange.innerHTML = `${maxTemp}&degC/${minTemp}&degC`;
   let weatherDescription = document.querySelector("h4#weatherDefintion");
   weatherDescription = `${description}`;
-  let otherWeather = document.querySelector("h3#otherWeather");
-  otherWeather.innerHTML = `Humidity: ${humidity}% | Wind: ${wind}km/h`;
+  let humidity = document.querySelector("h3#humidity");
+  humidity.innerHTML = `Humidity: ${humidity}%`;
+  let wind = document.querySelector("h3#humidity");
+  wind.innerHTML = `Wind: ${wind}km/h`;
 }
 
 // Change metric
