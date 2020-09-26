@@ -12,7 +12,7 @@ h1 {
 }
 h2 {
   color: #112d4e;
-  font-size: 22pt;
+  font-size: 34pt;
 }
 h3 {
   font-size: 12pt;
@@ -59,7 +59,7 @@ h2 a {
   font-size: 10pt;
   font-weight: 300;
   position: relative;
-  top: -11px;
+  top: -24px;
 }
 .card {
   padding: 10px 10px;
