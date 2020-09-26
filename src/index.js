@@ -57,8 +57,8 @@ function showWeather(response) {
   let minTemp = Math.round(response.data.main.temp_min);
   let temp = Math.round(response.data.main.temp);
   let description = response.data.weather[0].main;
-  let humidity = response.data.main.humidity;
-  let wind = response.data.wind.speed;
+  let humidityData = response.data.main.humidity;
+  let windData = response.data.wind.speed;
   let cityDisplay = document.querySelector("h1");
   cityDisplay.innerHTML = city;
   let currentTemp = document.querySelector("h2");
@@ -68,9 +68,9 @@ function showWeather(response) {
   let weatherDescription = document.querySelector("h4#weatherDefintion");
   weatherDescription = `${description}`;
   let humidity = document.querySelector("h3#humidity");
-  humidity.innerHTML = `Humidity: ${humidity}%`;
-  let wind = document.querySelector("h3#humidity");
-  wind.innerHTML = `Wind: ${wind}km/h`;
+  humidity.innerHTML = `Humidity: ${humidityData}%`;
+  let wind = document.querySelector("h3#wind");
+  wind.innerHTML = `Wind: ${windData}km/h`;
 }
 
 // Change metric
