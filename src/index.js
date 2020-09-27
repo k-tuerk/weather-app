@@ -57,6 +57,7 @@ function formatDate(timestamp) {
   let AMPM = `AM`;
   if (hour > 12) {
     AMPM = `pm`;
+    hour = hour - 12;
   } else {
     AMPM = `am`;
   }
