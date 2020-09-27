@@ -61,8 +61,8 @@ function showWeather(response) {
   let windData = response.data.wind.speed;
   let cityDisplay = document.querySelector("h1");
   cityDisplay.innerHTML = city;
-  let currentTemp = document.querySelector("h2.currentTemp");
-  currentTemp = `${temp}`;
+  let currentTemp = document.querySelector("#currentTemp");
+  currentTemp.innerHTML = `${temp}`;
   let celciusChange = document.querySelector("h3#tempHighLow");
   celciusChange.innerHTML = `${maxTemp}&degC/${minTemp}&degC`;
   let weatherDescription = document.querySelector("h4#weatherDefintion");
