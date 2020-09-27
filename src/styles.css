@@ -11,7 +11,7 @@ h1 {
 }
 strong {
   color: #112d4e;
-  font-size: 34pt;
+  font-size: 38pt;
   font-weight: 500;
   padding-left: 15pt;
 }
@@ -108,5 +108,5 @@ form {
   padding-top: 6pt;
 }
 .icon {
-  max-width: 20%;
+  max-width: 15%;
 }
