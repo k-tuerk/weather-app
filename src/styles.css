@@ -1,5 +1,5 @@
 /* Colour pallette: f9f7f7; dbe2ef; 3f72af; 112d4e */
-img {
+img #world {
   max-width: 90%;
   margin: 0 0 20pt 0;
 }
@@ -28,7 +28,6 @@ li {
   margin: 0;
   padding: 0 0;
   position: relative;
-  left: -90px;
 }
 h4 {
   font-size: 16pt;
@@ -53,9 +52,6 @@ button:hover {
 }
 form {
   padding: 5pt 0 0 0;
-}
-form {
-  width: 265px;
 }
 .units {
   padding: 5pt 0pt;
@@ -104,12 +100,15 @@ form {
 .coded-by {
   text-align: center;
 }
-.float-left {
-  padding-top: 2pt;
-}
 #weatherDefintion {
   text-transform: capitalize;
 }
 #todayDate {
   font-size: 12pt;
 }
+.icon {
+  max-width: 10%;
+}
+/* .iconTemp {
+  max-width: 25pt;
+} */

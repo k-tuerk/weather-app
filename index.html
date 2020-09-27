@@ -17,20 +17,19 @@
     <div class="container">
       <div class="row">
         <div class="col-8 my-auto" class="today">
-          <img src="images/world_map_.svg" alt="weatherImage" class="icon" />
+          <img src="images/world_map_.svg" alt="weatherImage" id="world"/>
           <h1>Toronto</h1>
           <h4 id="todayDate">Last update: Sunday 11:37am</h4>
           <h4 id="weatherDefintion">Clouds</h4></br>
-          <div class="float-left">
-          <strong id="currentTemp">
-            20</strong><span class="units"><a id="Clink">&degC | </a
-            ><a id="Flink">&degF</a></span>
-          </div>
+          <div>
+          <img src="images/icons/01d.svg" alt="weatherIcon" class="icon" /><strong id="currentTemp">20</strong>
+            <span class="units"><a id="Clink">&degC | </a><a id="Flink">&degF</a></span>
           <ul>
             <li><h3 id="tempHighLow">20&degC/18&degC</h3></li>
             <li><h3 id="humidity">Humidity: 20%</h3></li>
             <li><h3 id="wind">Wind: 4km/h</h3></li>
           </ul>
+          </div>
           <form>
             <div class="md-form">
               <input
