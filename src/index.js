@@ -100,10 +100,7 @@ function showWeather(response) {
   wind.innerHTML = `Wind: ${windData}km/h`;
   todayDate.innerHTML = formatDate(response.data.dt * 1000);
   let icon = document.querySelector(".icon");
-  icon.setAttribute(
-    `src`,
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
+  icon.setAttribute(`src`, `images/icons/${response.data.weather[0].icon}.svg`);
 }
 
 // Change metric
