@@ -36,9 +36,6 @@ h4 {
   color: #112d4e;
   font-weight: 300;
 }
-h7 {
-  font-size: 8pt;
-}
 button {
   color: #f9f7f7;
   background-color: #3f72af;
@@ -104,9 +101,11 @@ form {
 }
 #weatherDefintion {
   text-transform: capitalize;
+  margin-bottom: 10pt;
 }
 #todayDate {
-  font-size: 12pt;
+  font-size: 10pt;
+  padding-top: 5pt;
 }
 .icon {
   max-width: 20%;
