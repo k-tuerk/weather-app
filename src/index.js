@@ -56,7 +56,7 @@ function showWeather(response) {
   let maxTemp = Math.round(response.data.main.temp_max);
   let minTemp = Math.round(response.data.main.temp_min);
   let temp = Math.round(response.data.main.temp);
-  let description = response.data.weather[0].main;
+  let description = response.data.weather[0].description;
   let humidityData = response.data.main.humidity;
   let windData = response.data.wind.speed;
   let cityDisplay = document.querySelector("h1");
@@ -66,7 +66,7 @@ function showWeather(response) {
   let celciusChange = document.querySelector("h3#tempHighLow");
   celciusChange.innerHTML = `${maxTemp}&degC/${minTemp}&degC`;
   let weatherDescription = document.querySelector("h4#weatherDefintion");
-  weatherDescription = `${description}`;
+  weatherDescription.innerHTML = `${description}`;
   let humidity = document.querySelector("h3#humidity");
   humidity.innerHTML = `Humidity: ${humidityData}%`;
   let wind = document.querySelector("h3#wind");

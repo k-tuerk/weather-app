@@ -107,3 +107,6 @@ form {
 .float-left {
   padding-top: 2pt;
 }
+#weatherDefintion {
+  text-transform: capitalize;
+}
