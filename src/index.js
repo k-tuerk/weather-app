@@ -1,44 +1,70 @@
-//Getting todays date
-let now = new Date();
-let days = [
-  `Sunday`,
-  `Monday`,
-  `Tuesday`,
-  `Wednesday`,
-  `Thursday`,
-  `Friday`,
-  `Saturday`,
-];
-let day = days[now.getDay()];
-let months = [
-  `Janurary`,
-  `Februrary`,
-  `March`,
-  `April`,
-  `May`,
-  `June`,
-  `July`,
-  `August`,
-  `September`,
-  `October`,
-  `November`,
-  `December`,
-];
-let month = months[now.getMonth()];
-let date = now.getDate();
-let hour = now.getHours();
-let minute = now.getMinutes();
-let todayDate = document.querySelector(`h4#todayDate`);
-let AMPM = `AM`;
-if (hour > 12) {
-  AMPM = `PM`;
-} else {
-  AMPM = `AM`;
+// //Getting todays date
+// let now = new Date();
+// let days = [
+//   `Sunday`,
+//   `Monday`,
+//   `Tuesday`,
+//   `Wednesday`,
+//   `Thursday`,
+//   `Friday`,
+//   `Saturday`,
+// ];
+// let day = days[now.getDay()];
+// let months = [
+//   `Janurary`,
+//   `Februrary`,
+//   `March`,
+//   `April`,
+//   `May`,
+//   `June`,
+//   `July`,
+//   `August`,
+//   `September`,
+//   `October`,
+//   `November`,
+//   `December`,
+// ];
+// let month = months[now.getMonth()];
+// let date = now.getDate();
+// let hour = now.getHours();
+// let minute = now.getMinutes();
+// let todayDate = document.querySelector(`h4#todayDate`);
+// let AMPM = `AM`;
+// if (hour > 12) {
+//   AMPM = `PM`;
+// } else {
+//   AMPM = `AM`;
+// }
+// if (minute < 10) {
+//   minute = `0${minute}`;
+// }
+// todayDate.innerHTML = `${day}, ${month} ${date} ${hour}:${minute} ${AMPM}`;
+
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let days = [
+    `Sunday`,
+    `Monday`,
+    `Tuesday`,
+    `Wednesday`,
+    `Thursday`,
+    `Friday`,
+    `Saturday`,
+  ];
+  let day = days[date.getDay()];
+  let hour = date.getHours();
+  let minute = date.getMinutes();
+  let AMPM = `AM`;
+  if (hour > 12) {
+    AMPM = `pm`;
+  } else {
+    AMPM = `am`;
+  }
+  if (minute < 10) {
+    minute = `0${minute}`;
+  }
+  return `Last updated: ${day} ${hour}:${minute}${AMPM}`;
 }
-if (minute < 10) {
-  minute = `0${minute}`;
-}
-todayDate.innerHTML = `${day}, ${month} ${date} ${hour}:${minute} ${AMPM}`;
 
 // Changing City
 function searchCity(event) {
@@ -71,6 +97,7 @@ function showWeather(response) {
   humidity.innerHTML = `Humidity: ${humidityData}%`;
   let wind = document.querySelector("h3#wind");
   wind.innerHTML = `Wind: ${windData}km/h`;
+  todayDate.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 // Change metric

@@ -31,7 +31,7 @@ li {
   left: -90px;
 }
 h4 {
-  font-size: 14pt;
+  font-size: 16pt;
   color: #112d4e;
   font-weight: 300;
 }
@@ -109,4 +109,7 @@ form {
 }
 #weatherDefintion {
   text-transform: capitalize;
+}
+#todayDate {
+  font-size: 12pt;
 }
