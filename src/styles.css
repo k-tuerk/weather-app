@@ -14,6 +14,7 @@ strong {
   color: #112d4e;
   font-size: 34pt;
   font-weight: 500;
+  padding-left: 15pt;
 }
 h3 {
   font-size: 12pt;
@@ -22,6 +23,8 @@ h3 {
 }
 ul {
   float: right;
+  padding-left: 20pt;
+  margin: 0;
 }
 li {
   list-style: none;
@@ -59,7 +62,7 @@ form {
   font-size: 10pt;
   font-weight: 300;
   position: relative;
-  top: -24px;
+  top: -15px;
 }
 .card {
   padding: 10px 10px;
@@ -107,8 +110,5 @@ form {
   font-size: 12pt;
 }
 .icon {
-  max-width: 10%;
+  max-width: 20%;
 }
-/* .iconTemp {
-  max-width: 25pt;
-} */
