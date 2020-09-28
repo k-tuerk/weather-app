@@ -91,7 +91,7 @@ form {
   border-radius: 10px;
 }
 .weekDay {
-  color: #212629;
+  color: #112d4e;
   background-color: rgb(232, 231, 255);
   border: none;
   padding: 3px;
@@ -109,4 +109,12 @@ form {
 }
 .icon {
   max-width: 15%;
+}
+.active {
+  color: #112d4e;
+  cursor: pointer;
+}
+.active:hover {
+  text-decoration: none;
+  color: #3f72af;
 }
