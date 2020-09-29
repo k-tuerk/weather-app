@@ -10,6 +10,11 @@ function formatDate(timestamp) {
     `Saturday`,
   ];
   let day = days[date.getDay()];
+  return `Last updated: ${day} ${formatHours(timestamp)}`;
+}
+
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
   let hour = date.getHours();
   let minute = date.getMinutes();
   let AMPM = `AM`;
@@ -22,7 +27,7 @@ function formatDate(timestamp) {
   if (minute < 10) {
     minute = `0${minute}`;
   }
-  return `Last updated: ${day} ${hour}:${minute}${AMPM}`;
+  return `${hour}:${minute}${AMPM}`;
 }
 
 // Changing City
@@ -32,15 +37,32 @@ function searchCity(event) {
   let apiKey = `a2d28a642d9c48b595a677fa32994307`;
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(showWeather);
-  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityInput}&appid=${apiKey}&units=metric`;
+  apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityInput}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(showForecast);
 }
 let form = document.querySelector(`form`);
 form.addEventListener(`submit`, searchCity);
 
 function showForecast(response) {
-  // let forecastElement = document.querySelector(`#forecast`);
-  console.log(response.data.list[0]);
+  let forecastElement = document.querySelector("#forecast");
+  let forecast = null;
+  forecastElement.innerHTML = null;
+  for (let index = 0; index < 5; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `<div class="card-body">
+              <div class="d-flex justify-content-center align-items-center">
+                <img
+                  src="images/icons/${forecast.weather[0].icon}.svg"
+                  alt="weatherIcon"
+                  class="weeklyIcon"
+                />
+                <h5 class="card-title">${formatHours(forecast.dt * 1000)}</h5>
+              </div>
+              <p class="card-text">${Math.round(
+                forecast.main.temp_max
+              )}&degC/${Math.round(forecast.main.temp_min)}&degC</p>
+            </div>`;
+  }
 }
 
 function showWeather(response) {
@@ -105,3 +127,5 @@ function getCurrentLocation(event) {
 }
 let locationClick = document.querySelector(".currentLocation");
 locationClick.addEventListener("click", getCurrentLocation);
+
+// searchCity("Toronto");
