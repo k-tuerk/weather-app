@@ -54,7 +54,8 @@ function showForecast(response) {
   forecastElement.innerHTML = null;
   for (let index = 0; index < 5; index++) {
     forecast = response.data.list[index];
-    forecastElement.innerHTML += `<div class="card-body">
+    forecastElement.innerHTML += `<div class="card mx-auto">
+    <div class="card-body">
               <div class="d-flex justify-content-center align-items-center">
                 <img
                   src="images/icons/${forecast.weather[0].icon}.svg"
@@ -66,7 +67,7 @@ function showForecast(response) {
               <p class="card-text">${Math.round(
                 forecast.main.temp_max
               )}&degC/${Math.round(forecast.main.temp_min)}&degC</p>
-            </div>`;
+            </div></div>`;
   }
 }
 
