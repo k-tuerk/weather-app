@@ -32,15 +32,21 @@ function formatHours(timestamp) {
 
 // Changing City
 function searchCity(cityInput) {
-  let cityInput = document.querySelector("#searchCity").value;
   let apiKey = `a2d28a642d9c48b595a677fa32994307`;
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(showWeather);
   apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityInput}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(showForecast);
 }
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#searchCity");
+  searchCity(cityInput.value);
+}
+
 let form = document.querySelector(`form`);
-form.addEventListener(`submit`, searchCity);
+form.addEventListener(`submit`, handleSubmit);
 
 function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
