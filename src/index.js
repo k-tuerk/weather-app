@@ -55,8 +55,8 @@ function showForecast(response) {
   for (let index = 0; index < 5; index++) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `<div class="card mx-auto">
-    <div class="card-body mx-auto">
-    <h5 class="card-title">${formatHours(forecast.dt * 1000)}</h5>            
+    <div class="card-body mx-auto align-items-center d-flex justify-content-center">
+    <h5 class="card-title">${formatHours(forecast.dt * 1000)}</h5>       
     <img
                   src="images/icons/${forecast.weather[0].icon}.svg"
                   alt="weatherIcon"

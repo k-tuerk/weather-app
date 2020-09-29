@@ -69,7 +69,8 @@ h5 {
 .card {
   padding: 10px 10px;
   margin: 5px 5px;
-  width: 80%;
+  width: 94pt;
+  height: 94pt;
   border-radius: 15pt;
   color: #112d4e;
   background-color: #dbe2ef;
@@ -125,7 +126,7 @@ h5 {
   color: #3f72af;
 }
 .weeklyIcon {
-  max-width: 60%;
+  max-width: 30%;
   padding: 5pt 5pt;
 }
 .card-title {
