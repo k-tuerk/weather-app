@@ -118,3 +118,9 @@ form {
   text-decoration: none;
   color: #3f72af;
 }
+.weeklyIcon {
+  max-width: 30%;
+}
+.card-title {
+  margin: 0;
+}
