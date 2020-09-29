@@ -31,8 +31,7 @@ function formatHours(timestamp) {
 }
 
 // Changing City
-function searchCity(event) {
-  event.preventDefault();
+function searchCity(cityInput) {
   let cityInput = document.querySelector("#searchCity").value;
   let apiKey = `a2d28a642d9c48b595a677fa32994307`;
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=metric`;
@@ -128,4 +127,4 @@ function getCurrentLocation(event) {
 let locationClick = document.querySelector(".currentLocation");
 locationClick.addEventListener("click", getCurrentLocation);
 
-// searchCity("Toronto");
+searchCity("Toronto");
