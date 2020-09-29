@@ -52,6 +52,12 @@ button:hover {
 form {
   padding: 5pt 0 0 0;
 }
+h5 {
+  font-size: 12pt;
+}
+.card-body {
+  padding: 5pt 5pt;
+}
 .units {
   padding: 5pt 0pt;
   color: #112d4e;
@@ -119,7 +125,8 @@ form {
   color: #3f72af;
 }
 .weeklyIcon {
-  max-width: 30%;
+  max-width: 60%;
+  padding: 5pt 5pt;
 }
 .card-title {
   margin: 0;
