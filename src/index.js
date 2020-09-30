@@ -71,20 +71,22 @@ function showForecast(response) {
 
 function showWeather(response) {
   let city = response.data.name;
-  let maxTemp = Math.round(response.data.main.temp_max);
-  let minTemp = Math.round(response.data.main.temp_min);
+  // let maxTemp = Math.round(response.data.main.temp_max);
+  // let minTemp = Math.round(response.data.main.temp_min);
   let description = response.data.weather[0].description;
   let humidityData = response.data.main.humidity;
   let windData = response.data.wind.speed;
 
   celciusTemperature = Math.round(response.data.main.temp);
+  celciusMaxTemp = Math.round(response.main.temp_max);
+  celciusMinTemp = Math.round(response.data.main.temp_min);
 
   let cityDisplay = document.querySelector("h1");
   cityDisplay.innerHTML = city;
   let currentTemp = document.querySelector("#currentTemp");
   currentTemp.innerHTML = `${celciusTemperature}`;
   let celciusChange = document.querySelector("h3#tempHighLow");
-  celciusChange.innerHTML = `${maxTemp}&degC/${minTemp}&degC`;
+  celciusChange.innerHTML = `${celciusMaxTemp}&degC/${celciusMinTemp}&degC`;
   let weatherDescription = document.querySelector("h4#weatherDefintion");
   weatherDescription.innerHTML = `${description}`;
   let humidity = document.querySelector("h3#humidity");
@@ -107,8 +109,12 @@ function celciusLink(event) {
 function farenheitLink(event) {
   event.preventDefault();
   let farenheitTemp = Math.round((celciusTemperature * 9) / 5 + 32);
+  let farenheitMaxTemp = Math.round((celciusMaxTemp * 9) / 5 + 32);
+  let farenheitMinTemp = Math.round((celciusMinTemp * 9) / 5 + 32);
   let temp = document.querySelector("#currentTemp");
   temp.innerHTML = `${farenheitTemp}`;
+  let maxMinTemp = document.querySelector("h3#tempHighLow");
+  maxMinTemp = `${farenheitMaxTemp}& degF / ${farenheitMinTemp}& degF`;
   cClick.classList.remove(`active`);
   fClick.classList.add(`active`);
 }
