@@ -103,6 +103,8 @@ function celciusLink(event) {
   event.preventDefault();
   let temp = document.querySelector("#currentTemp");
   temp.innerHTML = celciusTemperature;
+  let maxMinTemp = document.querySelector("h3#tempHighLow");
+  maxMinTemp.innerHTML = `${celciusMaxTemp}&degC / ${celciusMinTemp}&degC`;
   fClick.classList.remove(`active`);
   cClick.classList.add(`active`);
 }
