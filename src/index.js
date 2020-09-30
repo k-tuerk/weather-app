@@ -78,7 +78,7 @@ function showWeather(response) {
   let windData = response.data.wind.speed;
 
   celciusTemperature = Math.round(response.data.main.temp);
-  celciusMaxTemp = Math.round(response.main.temp_max);
+  celciusMaxTemp = Math.round(response.data.main.temp_max);
   celciusMinTemp = Math.round(response.data.main.temp_min);
 
   let cityDisplay = document.querySelector("h1");
@@ -114,7 +114,7 @@ function farenheitLink(event) {
   let temp = document.querySelector("#currentTemp");
   temp.innerHTML = `${farenheitTemp}`;
   let maxMinTemp = document.querySelector("h3#tempHighLow");
-  maxMinTemp = `${farenheitMaxTemp}& degF / ${farenheitMinTemp}& degF`;
+  maxMinTemp.innerHTML = `${farenheitMaxTemp}&degF / ${farenheitMinTemp}&degF`;
   cClick.classList.remove(`active`);
   fClick.classList.add(`active`);
 }
