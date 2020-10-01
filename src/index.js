@@ -71,8 +71,6 @@ function showForecast(response) {
 
 function showWeather(response) {
   let city = response.data.name;
-  // let maxTemp = Math.round(response.data.main.temp_max);
-  // let minTemp = Math.round(response.data.main.temp_min);
   let description = response.data.weather[0].description;
   let humidityData = response.data.main.humidity;
   let windData = response.data.wind.speed;
@@ -117,6 +115,25 @@ function farenheitLink(event) {
   temp.innerHTML = `${farenheitTemp}`;
   let maxMinTemp = document.querySelector("h3#tempHighLow");
   maxMinTemp.innerHTML = `${farenheitMaxTemp}&degF / ${farenheitMinTemp}&degF`;
+
+  let forecastElement = document.querySelector("#forecast");
+  let forecast = null;
+  forecastElement.innerHTML = null;
+    for (let index = 0; index < 5; index++) {
+      forecast = response.data.list[index];
+      forecastElement.innerHTML += `
+      <div class="card mx-auto">
+        <div class="card-body mx-auto align-items-center d-flex justify-content-center flex-column">
+          <h5 class="card-title">${formatHours(forecast.dt * 1000)}</h5>
+          <img src="images/icons/${
+            forecast.weather[0].icon
+          }.svg" alt="weatherIcon" class="weeklyIcon mx-auto d-block"/>
+          <p class="card-text">${Math.round(
+            forecast.main.temp_max
+          )}&degC/${Math.round(forecast.main.temp_min)}&degC</p>
+        </div>
+      </div>`;
+
   cClick.classList.remove(`active`);
   fClick.classList.add(`active`);
 }
