@@ -76,11 +76,9 @@ function showWeather(response) {
   let description = response.data.weather[0].description;
   let humidityData = response.data.main.humidity;
   let windData = response.data.wind.speed;
-
   celciusTemperature = Math.round(response.data.main.temp);
   celciusMaxTemp = Math.round(response.data.main.temp_max);
   celciusMinTemp = Math.round(response.data.main.temp_min);
-
   let cityDisplay = document.querySelector("h1");
   cityDisplay.innerHTML = city;
   let currentTemp = document.querySelector("#currentTemp");
@@ -105,7 +103,6 @@ function celciusLink(event) {
   temp.innerHTML = celciusTemperature;
   let maxMinTemp = document.querySelector("h3#tempHighLow");
   maxMinTemp.innerHTML = `${celciusMaxTemp}&degC / ${celciusMinTemp}&degC`;
-
   let forecastMax = document.querySelectorAll(".forecast-max");
   forecastMax.forEach(function (forecast) {
     // grabbing the current value to convert
@@ -113,7 +110,6 @@ function celciusLink(event) {
     // convert to Fahrenheit
     forecast.innerHTML = Math.round((currentTemp - 32) * (5 / 9));
   });
-
   let forecastMin = document.querySelectorAll(".forecast-min");
   forecastMin.forEach(function (forecast) {
     // grabbing the current value to convert
@@ -121,10 +117,8 @@ function celciusLink(event) {
     // convert to Fahrenheit
     forecast.innerHTML = Math.round((currentTemp - 32) * (5 / 9));
   });
-
   fClick.classList.remove(`active`);
   cClick.classList.add(`active`);
-
   cClick.removeEventListener("click", celciusLink);
   fClick.addEventListener("click", farenheitLink);
 }
@@ -145,7 +139,6 @@ function farenheitLink(event) {
     // convert to Fahrenheit
     forecast.innerHTML = Math.round((currentTemp * 9) / 5 + 32);
   });
-
   let forecastMin = document.querySelectorAll(".forecast-min");
   forecastMin.forEach(function (forecast) {
     // grabbing the current value to convert
@@ -153,10 +146,8 @@ function farenheitLink(event) {
     // convert to Fahrenheit
     forecast.innerHTML = Math.round((currentTemp * 9) / 5 + 32);
   });
-
   cClick.classList.remove(`active`);
   fClick.classList.add(`active`);
-
   cClick.addEventListener("click", celciusLink);
   fClick.removeEventListener("click", farenheitLink);
 }

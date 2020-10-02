@@ -1,7 +1,4 @@
 /* Colour pallette: f9f7f7; dbe2ef; 3f72af; 112d4e */
-#world {
-  padding: 0 0 15pt 0;
-}
 p {
   font-size: 10pt;
   color: #112d4e;
@@ -131,4 +128,7 @@ h5 {
 }
 .card-title {
   margin: 0;
+}
+#world {
+  padding: 0 0 15pt 0;
 }
