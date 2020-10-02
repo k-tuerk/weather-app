@@ -124,6 +124,9 @@ function celciusLink(event) {
 
   fClick.classList.remove(`active`);
   cClick.classList.add(`active`);
+
+  cClick.removeEventListener("click", celciusLink);
+  fClick.addEventListener("click", farenheitLink);
 }
 function farenheitLink(event) {
   event.preventDefault();
@@ -153,6 +156,9 @@ function farenheitLink(event) {
 
   cClick.classList.remove(`active`);
   fClick.classList.add(`active`);
+
+  cClick.addEventListener("click", celciusLink);
+  fClick.removeEventListener("click", farenheitLink);
 }
 
 let celciusTemperature = null;
