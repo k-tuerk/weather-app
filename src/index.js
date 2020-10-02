@@ -105,6 +105,23 @@ function celciusLink(event) {
   temp.innerHTML = celciusTemperature;
   let maxMinTemp = document.querySelector("h3#tempHighLow");
   maxMinTemp.innerHTML = `${celciusMaxTemp}&degC / ${celciusMinTemp}&degC`;
+
+  let forecastMax = document.querySelectorAll(".forecast-max");
+  forecastMax.forEach(function (forecast) {
+    // grabbing the current value to convert
+    let currentTemp = forecast.innerHTML;
+    // convert to Fahrenheit
+    forecast.innerHTML = Math.round((currentTemp - 32) * (5 / 9));
+  });
+
+  let forecastMin = document.querySelectorAll(".forecast-min");
+  forecastMin.forEach(function (forecast) {
+    // grabbing the current value to convert
+    let currentTemp = forecast.innerHTML;
+    // convert to Fahrenheit
+    forecast.innerHTML = Math.round((currentTemp - 32) * (5 / 9));
+  });
+
   fClick.classList.remove(`active`);
   cClick.classList.add(`active`);
 }
