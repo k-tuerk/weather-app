@@ -61,9 +61,11 @@ function showForecast(response) {
         <img src="images/icons/${
           forecast.weather[0].icon
         }.svg" alt="weatherIcon" class="weeklyIcon mx-auto d-block"/>
-        <p class="card-text">${Math.round(
+        <p class="card-text"><span class="forecast-max">${Math.round(
           forecast.main.temp_max
-        )}&degC/${Math.round(forecast.main.temp_min)}&degC</p>
+        )}</span>&degC/<span class="forecast-min">${Math.round(
+      forecast.main.temp_min
+    )}</span>&degC</p>
       </div>
     </div>`;
   }
@@ -116,27 +118,26 @@ function farenheitLink(event) {
   let maxMinTemp = document.querySelector("h3#tempHighLow");
   maxMinTemp.innerHTML = `${farenheitMaxTemp}&degF / ${farenheitMinTemp}&degF`;
 
-  let forecastElement = document.querySelector("#forecast");
-  let forecast = null;
-  forecastElement.innerHTML = null;
-    for (let index = 0; index < 5; index++) {
-      forecast = response.data.list[index];
-      forecastElement.innerHTML += `
-      <div class="card mx-auto">
-        <div class="card-body mx-auto align-items-center d-flex justify-content-center flex-column">
-          <h5 class="card-title">${formatHours(forecast.dt * 1000)}</h5>
-          <img src="images/icons/${
-            forecast.weather[0].icon
-          }.svg" alt="weatherIcon" class="weeklyIcon mx-auto d-block"/>
-          <p class="card-text">${Math.round(
-            forecast.main.temp_max
-          )}&degC/${Math.round(forecast.main.temp_min)}&degC</p>
-        </div>
-      </div>`;
+  let forecastMax = document.querySelectorAll(".forecast-max");
+  forecastMax.forEach(function (forecast) {
+    // grabbing the current value to convert
+    let currentTemp = forecast.innerHTML;
+    // convert to Fahrenheit
+    forecast.innerHTML = Math.round((currentTemp * 9) / 5 + 32);
+  });
+
+  let forecastMin = document.querySelectorAll(".forecast-min");
+  forecastMin.forEach(function (forecast) {
+    // grabbing the current value to convert
+    let currentTemp = forecast.innerHTML;
+    // convert to Fahrenheit
+    forecast.innerHTML = Math.round((currentTemp * 9) / 5 + 32);
+  });
 
   cClick.classList.remove(`active`);
   fClick.classList.add(`active`);
 }
+
 let celciusTemperature = null;
 
 let cClick = document.querySelector("#Clink");
